@@ -1,0 +1,29 @@
+{% extends 'startup.html' %}
+{% block content %}
+<body>
+
+
+    <center><h1>Student Portal</h1>
+    {% comment %} <a href="{% url 'tea_profile' %}" class="btn btn-warning">My Profile</a> {% endcomment %}
+
+    <a href="{% url 'student' %} " class="btn btn-warning">Add Student</a>
+    <a href="{% url 'display' %} " class="btn btn-warning">Student record</a>
+    <a href="{% url 'result' %} " class="btn btn-warning">Add Student Result</a>
+    <a href="{% url 'display_result' %} " class="btn btn-warning">Edit Result</a>
+    <a href="{% url 'search_student' %} " class="btn btn-warning">Search Student</a>
+    </center>
+   {% comment %} <br>   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+    {% if stud_res %}
+    <div class="alert alert-success" role="alert">
+  Your record has been saved!
+</div> {% endcomment %}
+
+</body>
+
+
+{% endblock  %}

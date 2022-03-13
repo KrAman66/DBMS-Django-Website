@@ -1,0 +1,44 @@
+{% extends 'startup.html' %}
+
+{% block content %}
+
+<table border="1" cellpadding="10 px" class="table table-dark table-striped">
+<thead>
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Dae of Birth</th>
+<th>Guardian Name</th> 
+<th>Standard</th>
+<th>Address</th>
+<th>Email</th>
+<th>Mobile No.</th>
+<th>Parent Mobile No.</th>
+<th>Modify</th>
+<th>Delete</th>
+
+
+</thead>
+{% for stud in student_info  %} 
+<tr>
+    <td >{{stud.id}}</td>
+    <td >{{stud.first_name}}</td>
+    <td >{{stud.last_name}}</td> 
+    <td >{{stud.date_of_birth}}</td> 
+    <td >{{stud.guardian_name}}</td>
+    <td >{{stud.standard_id}}</td>
+    <td >{{stud.address}}</td>
+    <td >{{stud.email}}</td>
+    <td >{{stud.mobile}}</td>
+    <td >{{stud.guardian_mobile}}</td>
+
+    <td ><a href=" {% url 'update' stud.id %} " class="btn btn-success">Edit</a></td>
+    <td ><a href=" {% url 'delete' stud.id %} " class="btn btn-danger">Delete</a></td> 
+    {% comment %} <td ><a href=" {% url 'display_result' %} " class="btn btn-secondary">Result</a></td>  {% endcomment %}
+
+{% endfor %}
+</tr>
+</table>
+
+{% endblock  %}
+</div>

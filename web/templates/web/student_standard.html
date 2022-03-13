@@ -1,0 +1,16 @@
+{% extends 'startup.html' %}
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+    <center>
+    <input type="text" name="standard" placeholder="Enter Student class"><br><br>
+    <button type="submit" class="btn btn-primary" name="Student">Insert</button>
+
+</center>
+
+
+</form>
+
+{% endblock %}

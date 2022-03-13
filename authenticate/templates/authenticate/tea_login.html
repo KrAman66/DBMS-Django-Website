@@ -1,0 +1,20 @@
+{% extends 'startup.html' %}
+{% include "navbar.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+<h1>Teacher Login</h1>
+
+<form action="" method="POST">
+
+{% csrf_token %}
+{{tea_info | crispy }}
+<br>
+<center><button type="submit" class="btn btn-primary">Login</button></center>
+
+{% comment %} Haven't logged in? 
+<a href=" {% url 'tea_register' %} ">Register Here</a> {% endcomment %}
+
+</form>
+</div>
+{% endblock  %}

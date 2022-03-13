@@ -1,0 +1,19 @@
+{% extends 'startup.html' %}
+{% block content %}
+
+<form action="{% url 'tea_login' %}" method="POST">
+ {% csrf_token %} 
+     <center>   
+    <button type="submit" class="btn btn-warning" name="Teacher" >Teacher</button><br><br><br>
+</center>
+
+</form>
+
+<form action="{% url 'stu_login' %} " method="POST">
+ {% csrf_token %} 
+     <center>   
+    <button type="submit" class="btn btn-warning" name="Student" >Student</button><br><br><br>
+</center>
+
+</form>
+{% endblock %}

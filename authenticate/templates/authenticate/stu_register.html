@@ -1,0 +1,24 @@
+{% extends 'startup.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+{% if flag %}
+<h1>Congrats</h1>
+
+{% else %}
+
+<h1>Student Registration</h1>
+
+<form  method="POST" enctype="multipart/form-data" >
+
+{% csrf_token %}
+{{Studentform | crispy }}<br>
+<!-- {{stu_info_media | crispy}} -->
+
+<center><button type="submit" class="btn btn-dark" >Register</button></center>
+</form>
+
+{% endif %}
+{% endblock  %}

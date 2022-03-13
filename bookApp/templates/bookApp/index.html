@@ -1,0 +1,25 @@
+{% extends 'startup.html' %}
+
+
+{% block content %}
+
+
+    
+<form action="" method="POST">
+
+    {% csrf_token %}
+
+<input type="text" name="name" class="form-control" placeholder="Enter Book Name"><br><br>
+<input type="text" name="price" class="form-control" placeholder="Enter Book Price"><br><br>
+<input type="text" name="qty" class="form-control" placeholder="Enter no. of Books"><br><br>
+<input type="text" name="author" class="form-control" placeholder="Enter Author Name"><br><br>
+
+<center><button type="submit" class="btn btn-outline-dark">Submit</button> </center>
+</form>
+
+{% if msg %}
+{{msg}}
+{% endif %}
+
+{% endblock  %}
+

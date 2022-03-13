@@ -1,0 +1,22 @@
+{% extends 'startup.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="" method="POST" class="needs-validation" novalidate onsubmit="return validation()">
+{% csrf_token %}
+
+    <h3>Roll No.:</h3><input type="text" name="roll" class="form-control" value="{{ res_info.roll }}" readonly><br>
+    <h3>Full Name:</h3><input type="text" name="name" pattern="^[A-Z a-z]{3,16}$" class="form-control" value="{{ res_info.s_name }}" readonly><br>
+    <h3>English:</h3><input type="text" name="english" pattern="^[0-9]{2}$" class="form-control" value="{{ res_info.english }}"><br>  
+    <h3>Mathematics:</h3><input type="text" name="math" pattern="^[0-9]{2}$" class="form-control" value="{{ res_info.math }}"><br>     
+
+    <h3>Science:</h3><input type="text" name="science" pattern="^[0-9]{2}$" class="form-control" value="{{ res_info.science }}"><br>     
+ 
+    <h3>History:</h3><input type="text" name="history" pattern="^[0-9]{2}$" class="form-control" value="{{ res_info.history }}"><br> 
+    <h3>Geography:</h3><input type="text" name="geography" pattern="^[0-9]{2}$" class="form-control" value="{{ res_info.geography }}"><br>    
+    
+    <center><button type="submit" class="btn btn-primary" >Update</button>
+      
+</form>
+<script src="/static/js/app.js"></script>
+{% endblock  %}

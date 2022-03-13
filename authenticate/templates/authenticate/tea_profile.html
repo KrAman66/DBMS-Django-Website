@@ -1,0 +1,13 @@
+{% extends 'startup.html' %}
+{% block content %}
+<h1>Your Profile</h1>
+<p class="btn btn-primary"> Username: {{user.username}} </p><br>
+<p class="btn btn-primary"> Email: {{user.email}} </p>
+
+
+{% comment %} <img src="/media/{{ user.user_profile.profile_pic }}" width="100px" > {% endcomment %}
+
+{% comment %} <img src="/media/{{ user.user_profile.profile_pic }}" width="100px" > {% endcomment %}
+<hr>
+ <a href=" {% url 'change_user' %} " class ="btn btn-warning">Change Profile Info</a> 
+{% endblock  %}

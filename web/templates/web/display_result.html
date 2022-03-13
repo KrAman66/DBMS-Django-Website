@@ -1,0 +1,40 @@
+{% extends 'startup.html' %}
+
+{% block content %}
+
+<table border="1" cellpadding="10 px" class="table table-dark table-striped">
+<thead>
+<th>Roll No.</th>
+<th>Student Name</th>
+<th>English</th>
+<th>Mathematics</th>
+<th>Science</th> 
+<th>History</th>
+<th>Geography</th>
+<th>Total</th>
+<th>Percent( % )</th>
+<th>Grade</th>
+<th>Modify</th>
+<th>Delete</th>
+</thead>
+{% for res in get_result  %} 
+<tr>
+    <td >{{res.roll}}</td>
+    <td >{{res.s_name}}</td>
+    <td >{{res.english}}</td> 
+    <td >{{res.math}}</td> 
+    <td >{{res.science}}</td>
+    <td >{{res.history}}</td>
+    <td >{{res.geography}}</td>
+    <td >{{res.total}}</td>
+    <td >{{res.percent}}</td>
+    <td >{{res.grade}}</td>
+
+    <td ><a href=" {% url 'update_result' res.roll %} " class="btn btn-success">Edit</a></td>
+    <td ><a href=" {% url 'delete_result' res.roll %} " class="btn btn-danger">Delete</a></td>  
+
+{% endfor %}
+</tr>
+</table>
+
+{% endblock  %}

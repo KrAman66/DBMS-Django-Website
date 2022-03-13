@@ -1,0 +1,15 @@
+{% extends 'startup.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Change Profile</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    {{form | crispy}}
+    
+    
+    <div> <small id="hint_id_password" class="form-text text-muted">Change Password<a href="../password/"> Click here</a>.</small> </div> 
+    <button type="submit" >Change</button>
+</form>
+
+{% endblock  %}

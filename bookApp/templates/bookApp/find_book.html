@@ -1,0 +1,14 @@
+{% extends 'startup.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    <input type="text" name="find" class="form-control" placeholder="Searck Book or Author Name"><br><br>
+    <center><input type="submit" value="Find"><br><br></center>
+{% if msg %}
+
+{{msg}}
+{% endif %}
+</form>
+{% endblock  %}

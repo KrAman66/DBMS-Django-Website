@@ -1,0 +1,7 @@
+.form-control {
+    position: relative;
+}
+.form-control i{
+    color: red;
+}
+

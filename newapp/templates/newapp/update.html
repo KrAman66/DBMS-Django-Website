@@ -1,0 +1,13 @@
+<form action="" method="POST" name="update">
+    {% csrf_token %}
+
+    <input type="text" name="name" value="{{update_book.name}}"><br><br>
+    <input type="text" name="price" value={{update_book.price}}><br><br>
+    <input type="submit" value="Click" ><br><br>
+
+    {% if msg %}
+   
+    
+    {% endif %} 
+
+</form>

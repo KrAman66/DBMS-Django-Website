@@ -1,0 +1,22 @@
+
+{% block content %}
+<table border='2' cellpadding= "10 px" >
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Modify</th>
+
+    </thead>
+    <tr>
+    {% for i in a %}
+    <td> {{i.id}} </td>
+    <td> {{i.name}}</td>
+    <td> {{i.price}}</td>
+    <td> <a href = {% url 'update' i.id %} >Edit</a></td>
+
+</tr>
+{% endfor %}
+
+</table>
+{% endblock  %}

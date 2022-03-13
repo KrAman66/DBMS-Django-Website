@@ -1,0 +1,26 @@
+{% extends 'startup.html' %}
+{% block content %}
+
+<form action="" method="POST" name="search">
+ {% csrf_token %} 
+     <center>   
+    {% if msg %}
+    <h1 class="btn btn-danger">{{msg}}</h1>
+    {% endif %}<br><br>
+    <input type="text" name="fname" placeholder="Search by ID or first name." >
+    <button type="submit" class="btn btn-success" onclick="return validate();" >Search</button><br><br><br>
+</center>
+
+</form>
+<script>
+    function validate(){
+        var fname = document.forms["search"]["fname"].value; 
+        if(fname == ''){
+            alert("Please fill the text box");
+            return false;
+        }
+        return true;
+       }
+</script>
+
+{% endblock %}

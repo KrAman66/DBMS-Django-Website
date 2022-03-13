@@ -1,0 +1,27 @@
+{% extends 'startup.html' %} {% block content %}
+<div class="container">
+<form action="" method="POST">
+{% csrf_token %}
+<br><br>
+    {% comment %} <input type="text" name="id" class="form-control" placeholder="Enter book ID"><br><br> {% endcomment %}
+    <h3>Book ID:</h3><select name="id"  class="form-control">
+        <option value= {{0}} >Choose Book ID</option>
+        {% for books in book_obj %}
+        <option value=" {{books.id}} ">{{books.id}}</option>
+        {% endfor %}
+    </select><br>
+    <h3>Book Name:</h3><input type="text" name="name" class="form-control" placeholder="Enter book Name"><br><br>
+    <center><button type="submit" class="btn btn-dark">Search</button><br><br></center>
+<center>
+{% if msg %}
+<h3>{{msg}}</h3>
+{% endif %}
+{% if book %}
+<h3>Book Price = {{book.price}}</h3><br>
+<h3>Book Quantity = {{book.qty}}</h3><br>
+<h3>Author Name = {{book.au_name}}</h3>
+{% endif %}
+</center>
+</div>
+</form>
+{% endblock  %}

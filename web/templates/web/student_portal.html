@@ -1,0 +1,18 @@
+{% extends 'startup.html' %}
+{% block content %}
+<body>
+    <h1>Student Portal</h1>
+
+ 
+    <a href="{% url 'stu_profile' %}" class="btn btn-warning">Profile</a> 
+ 
+    <a href="{% url 'search_result' %} " class="btn btn-warning">Result</a>
+    <a href="" class="btn btn-warning">Routine</a> 
+    <a href="" class="btn btn-warning">Syllabus</a> 
+
+
+    {% comment %} <a href="{% url 'result' %} " class="btn btn-warning">Student Result</a>
+    <a href="{% url 'display_result' %} " class="btn btn-warning">Edit Result</a> {% endcomment %}
+
+</body>
+{% endblock  %}

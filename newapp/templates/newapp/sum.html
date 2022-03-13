@@ -1,0 +1,22 @@
+{% extends 'extend.html' %}
+
+
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    {% comment %} <input type="text" name="name" placeholder="Enter your name"><br><br> {% endcomment %}
+
+    <input type="text" name="val1" placeholder="Enter first number"><br><br>
+    <input type="text" name="val2" placeholder="Enter second number"><br><br>
+    <button type="submit" value=""> Add</button><br><br>
+   
+
+
+{% if  %}
+    <h1>Sum of {{v1}} and {{v2}} is = {{v3}} </h1>
+{% endif %}
+
+
+</form>
+ {% endblock  %}

@@ -1,0 +1,41 @@
+{% extends 'startup.html' %}
+
+{% block content %}
+
+<table border="1" cellpadding="10 px" class="table table-dark table-striped">
+<thead>
+<th>ID</th>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Dae of Birth</th>
+<th>Guardian Name</th> 
+<th>Standard</th>
+<th>Address</th>
+<th>Email</th>
+<th>Mobile No.</th>
+<th>Parent Mobile No.</th>
+<th>Modify</th>
+<th>Delete</th>
+
+</thead>
+{% for srch in srch_result  %} 
+<tr>
+    <td >{{srch.id}}</td>
+    <td >{{srch.first_name}}</td>
+    <td >{{srch.last_name}}</td> 
+    <td >{{srch.date_of_birth}}</td> 
+    <td >{{srch.guardian_name}}</td>
+    <td >{{srch.standard}}</td>
+    <td >{{srch.address}}</td>
+    <td >{{srch.email}}</td>
+    <td >{{srch.mobile}}</td>
+    <td >{{srch.guardian_mobile}}</td>
+
+    <td ><a href=" {% url 'update' srch.id %} " class="btn btn-success">Edit</a></td>
+    <td ><a href=" {% url 'delete' srch.id %} " class="btn btn-danger">Delete</a></td>  
+
+{% endfor %}
+</tr>
+</table>
+
+{% endblock  %}

@@ -1,0 +1,102 @@
+{% extends 'startup.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="" method="POST"  onsubmit="return validation()" autocomplete="off">
+{% csrf_token %}
+{% if msg %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{msg}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+    {% endif %}
+    <h3>Roll No.:</h3></h3><input type="text" name="id" class="form-control" minlength="1" maxlength="3" pattern="^[0-9]{1,3}$" placeholder="Enter roll number" title="Enter only numeric value/values" id="validationCustom01" required>
+    <span id="rollerror" style="color:red"></span>
+    <div class="invalid-feedback">Please fill out this field as required.</div><br>
+    <h3>First Name:</h3><input type="text" pattern="^[A-Za-z]{3,16}$" name="fname" class="form-control" placeholder="First Name" id="fname" title="Enter only single value with no space(Letters Only)" required>
+    <span id="ferror" style="color:red"></span><br>
+    <h3>Last Name:</h3><input type="text" pattern="^[A-Za-z]{3,16}$" name="lname" class="form-control" placeholder="Last Name" title="Enter only single value with no space(Letters Only)" id="lname" required>
+    <span id="lerror" style="color:red"></span><br>  
+    <h3>Father's Name:</h3><input type="text" pattern="^[A-Z a-z]{3,16}$" name="parent" class="form-control" placeholder="Enter Father's name" title="Enter full name(Letters Only)" id="father" required>
+    <span id="fathererror" style="color:red"></span><br>     
+    <h3>Date-of-Birth:</h3><input type="date" name="dob" class="form-control" placeholder="DD/MM/YYYY" id="dob" min="2005-01-01" max="2010-12-31" required>
+    <span id="doberror" style="color:red"></span><br> 
+
+
+    <h3>Standard:</h3><select name="standard" class="form-control" required>
+        <option value="None" selected disabled value="">Choose</option>
+        {% for stu in stu_obj %}
+        <option value={{stu.id}}>{{stu.standard}}</option>
+        {% endfor %}
+    </select><br>
+
+
+
+
+    <h3>Address:</h3><input type="text" name="address" class="form-control" placeholder="Enter your address" id="address" required>
+    <span id="addresserror" style="color:red"></span><br>    
+    <h3>Email ID:</h3><input type="email" pattern="^[A-Za-z_.0-9]{3,}@[A-Za-z]{3,}[.]{1}[a-z.]{2,6}$" name="email" class="form-control"  placeholder="Enter your email" id="mail" title="Example: john@email.com"required>
+    <span id="mailerror" style="color:red"></span><br>   
+    <h3>Mobile No.:</h3><input type="text" pattern="^[6789][0-9]{9}$" name="phone" class="form-control" placeholder="Enter phone No." id="mobile0" oninput="duplicates()" title="Enter 10 digits valid mobile number starting from 6-9" required>
+    <span id="error0" style="color:red"></span>
+    <br>
+    <h3>Alternate Mobile No.(optional):</h3><input type="text" pattern="^[6789][0-9]{9}$" name="p_phone" class="form-control" placeholder="Enter Alternate Phone No." id="mobile1" oninput="duplicates()" title="Enter 10 digits valid mobile number">
+    <span id="error1" style="color:red"></span>
+    <br>     
+    <center><button type="submit" class="btn btn-dark" >Next</button>
+
+    <button type="reset" class="btn btn-dark" >Reset</button><br></center>
+</form>
+<script src="/static/js/app.js"></script>
+<!-- <script>
+    function myfun(){`  
+        var a = document.getElementById("mobile").value;
+        if (a == ""){
+            document.getElementById("messages").innerHTML = "*Please fill Mobile Number";
+            return false;
+        }
+        if(isNaN(a)){
+            document.getElementById("messages").innerHTML = "*Only Numberic Values allowed";
+            return false;
+        }
+        if(a.length<10){
+            document.getElementById("messages").innerHTML = "*Mobile Number must be 10 digits";
+            return false;
+        }
+        if(a.length>10){
+            document.getElementById("messages").innerHTML = "*Mobile Number must be 10 digits";
+            return false;
+        }
+        if((a.charAt(0)!=9) && (a.charAt(0)!=8) && (a.charAt(0)!=7)) {
+            document.getElementById("messages").innerHTML = "*Mobile Numbers must start with 7, 8 or 9";
+            return false;
+        }
+        var b = document.getElementById("alternate").value;
+        if (b == ""){
+            document.getElementById("messages1").innerHTML = "*Please fill Mobile Number";
+            return false;
+        }
+        if(isNaN(b)){
+            document.getElementById("messages1").innerHTML = "*Only Numberic Values allowed";
+            return false;
+        }
+        if(b.length<10){
+            document.getElementById("messages1").innerHTML = "*Mobile Number must be 10 digits";
+            return false;
+        }
+        if(b.length>10){
+            document.getElementById("messages1").innerHTML = "*Mobile Number must be 10 digits";
+            return false;
+        }
+        if((b.charAt(0)!=9) && (b.charAt(0)!=8) && (b.charAt(0)!=7)) {
+            document.getElementById("messages").innerHTML = "*Mobile Numbers must start with 7, 8 or 9";
+            return false;
+        }
+    }
+</script> -->
+{% endblock  %} 
+
+
+
+
+

@@ -1,0 +1,21 @@
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    <body bgcolor="cyan">
+     <center>   
+        <h1>Teacher Registration</h1>
+    <input type="text" name="id" placeholder="Enter your ID" required><br><br>
+    <input type="text" name="fname" placeholder="Enter First Name"><br><br>
+    <input type="text" name="lname" placeholder="Enter Last Name"><br><br>
+    <input type="text" name="email" placeholder="Enter Your Email"><br><br>
+    <input type="text" name="mobile" placeholder="Enter Your Mobile No."><br><br>
+    <input type="password" name="password" placeholder="Enter Password"><br><br>
+    <button type="submit" class="btn btn-primary" name="Student">Register</button>
+
+</center>
+</body>
+
+</form>
+
+{% endblock %}

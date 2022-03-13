@@ -1,0 +1,30 @@
+{% extends 'startup.html' %}
+
+{% block content %}
+
+<table border="1" cellpadding="10 px" class="table table-dark table-striped">
+<thead>
+<th>ID</th>
+<th>Book Name</th>
+<th>Price</th>
+<th>Quantity</th> 
+<th>Author Name</th>
+<th>Update</th>
+<th>Delete</th>
+
+</thead>
+{% for dip in book_data  %} 
+<tr>
+    <td >{{dip.id}}</td>
+    <td >{{dip.name}}</td>
+    <td >{{dip.price}}</td> 
+    <td >{{dip.qty}}</td>
+    <td >{{dip.au_name}}</td>
+    <td ><a href=" {% url 'book_update' dip.id %} "> Update</a></td>
+    <td ><a href=" {% url 'book_delete' dip.id %} "> Delete</a></td>
+
+{% endfor %}
+</tr>
+</table>
+
+{% endblock  %}

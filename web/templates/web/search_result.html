@@ -1,0 +1,17 @@
+{% extends 'startup.html' %}
+{% block content %}
+
+<form action="" method="POST">
+ {% csrf_token %} 
+     <center>   
+    {% if msg %}
+    <h1 class="btn btn-danger">{{msg}}</h1>
+    {% endif %}<br><br>
+    <input type="text" name="find" placeholder="Enter your roll no." >
+    <button type="submit" class="btn btn-success" >Find</button><br><br><br>
+</center>
+
+</form>
+
+
+{% endblock %}

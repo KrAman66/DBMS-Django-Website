@@ -1,0 +1,25 @@
+{% extends 'startup.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+
+    <h3>Roll No.</h3><input type="text" name="id" class="form-control" value="{{ stud_data.id }}" readonly><br>
+    <h3>First Name:</h3><input type="text" name="fname" class="form-control" value="{{ stud_data.first_name }}"><br>
+    <h3>Last Name:</h3><input type="text" name="lname" class="form-control" value="{{ stud_data.last_name }}"><br>  
+    <h3>Date-of-Birth</h3><input type="text" name="dob" class="form-control" value="{{ stud_data.date_of_birth }}"><br>     
+
+    <h3>Father's Name</h3><input type="text" name="parent" class="form-control" value="{{ stud_data.guardian_name }}"><br>     
+ 
+    <h3>Standard:</h3><input type="text" name="standard" class="form-control" value="{{ stud_data.standard_id}}"><br> 
+    <h3>Address:</h3><input type="text" name="address" class="form-control" value="{{ stud_data.address }}"><br>    
+    <h3>Email ID:</h3><input type="text" name="email" class="form-control"  value="{{ stud_data.email }}"><br>   
+    <h3>Mobile No.:</h3><input type="text" name="phone" class="form-control" value="{{ stud_data.mobile }}"><br>
+    <h3>Alternate No.</h3><input type="text" name="p_phone" class="form-control" value="{{ stud_data.guardian_mobile }}"><br>     
+    <center><button type="submit" class="btn btn-primary" >Update</button>
+
+
+      
+</form>
+{% endblock  %}
